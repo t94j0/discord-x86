@@ -1,5 +1,10 @@
 # x86 random instruction bot
 
+## Pre-requirements
+
+* `pip3 install -U git+https://github.com/Rapptz/discord.py@rewrite`
+
+
 ## Usage
 
 1. Create bot [here](https://discordapp.com/developers/applications/)
