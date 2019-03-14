@@ -14,18 +14,18 @@ client = discord.Client()
 async def on_ready():
     print('Logged in as')
     print(client.user.name)
-    print(client.user.id)
     print('------')
 
 
 @client.event
 async def on_message(message):
-    if message.content.startswith('x86'):
-        instruction = random_x86()
-        url = '%s%s' % (URL, instruction['link'])
-        await client.send_message(
-            message.channel,
-            '%s is a fun one: %s' % (instruction['instruction'], url))
+    if not 'x86' not in message.content:
+        return
+    instruction = random_x86()
+    url = f'{URL}{instruction["link"]}'
+    await client.send_message(
+        message.channel,
+        f'{instruction["instruction"]} is a fun one: {url}'
 
 
 def random_x86():
